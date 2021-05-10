@@ -1,0 +1,106 @@
+const plugin = require('tailwindcss/plugin')
+const textSizes = require('./lib/textSizes')
+const fluidSpacing = require('./lib/fluidSpacing')
+const classes = require('./util/spacingClasses')
+const merge = require('lodash/merge');
+
+module.exports = plugin.withOptions( function(options) {
+    return function( { addBase, addUtilities, e, theme } ) {
+        defaultOptions = {
+            useClamp: false,
+            prefix: 'fl:',
+            baseTextSize: 'step-0',
+            generateSpacing: true,
+            generateAllSpacingPairs: true,
+            classes: classes,
+        } 
+        const opts = merge({}, defaultOptions, options);
+
+        let minWidth = theme('utopia.minScreen', '').replace('px', '')
+        let maxWidth = theme('utopia.maxScreen', '').replace('px', '')
+
+        if( opts.generateSpacing || !opts.useClamp ) {
+            const rootProperties = {
+                    ':root': {
+                        '--fluid-min-width': minWidth,
+                        '--fluid-max-width': maxWidth,
+
+                        '--fluid-screen': '100vw',
+                        '--fluid-bp': `calc( (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) / (var(--fluid-max-width) - var(--fluid-min-width)) )`,
+                    },
+
+                    [`@media (max-width: ${minWidth}px)`]: {
+                        ':root': {
+                            '--fluid-screen': 'calc(var(--fluid-min-width) * 1px)',           
+                        },
+                    },
+
+                [`@media (min-width: ${maxWidth}px)`]: {
+                        ':root': {
+                            '--fluid-screen': 'calc(var(--fluid-max-width) * 1px)',           
+                        },
+                    },
+                }
+
+            addBase(rootProperties);
+        }
+
+        textSizes({
+            theme: theme,
+            e: e,
+            addUtilities: addUtilities,
+            options: opts,
+        })
+
+        if( opts.generateSpacing === true ) {
+            fluidSpacing({
+                theme: theme,
+                e: e,
+                addUtilities: addUtilities,
+                addBase: addBase,
+                options: opts,
+            })
+        }
+       
+        
+    }
+}, function(options) {
+    return {
+        theme: {
+            utopia: {
+                minScreen: '320px',
+                minSize: 21,
+                minScale: 1.2,
+                maxScreen: '800px',
+                maxSize: 24,
+                maxScale: 1.25,
+                textSizes: [
+                    'step--2',
+                    'step--1',
+                    'step-0',
+                    'step-1',
+                    'step-2',
+                    'step-3',
+                    'step-4',
+                    'step-5',
+                ],
+                spacingSizes: {
+                    '2xs': 0.25,
+                    'xs': 0.5,
+                    'sm': 0.75,
+                    'md': 1,
+                    'lg': 1.5,
+                    'xl': 2,
+                    '2xl': 3,
+                    '3xl': 4,
+                    '4xl': 6,
+                    '5xl': 8
+                },
+                spacingPairs: {},
+                spacingCustomPairs: [],
+                spacingScale: {},
+            }
+        }
+    }
+})
+

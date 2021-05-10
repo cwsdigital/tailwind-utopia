@@ -1,0 +1,20 @@
+{
+  "name": "tailwind-utopia",
+  "version": "1.0.0",
+  "description": "A Tailwind CSS plugin to generate utility classes for interpolated fluid type and space scales.  ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Pymm",
+  "license": "MIT",
+  "peerDependencies": {
+    "tailwindcss": "^2"
+  },
+  "devDependencies": {
+    "lodash.merge": "^4.6.2"
+  }
+}
