@@ -55,8 +55,8 @@ module.exports = plugin.withOptions( function(options) {
         // can be easily extended by the user.
         //
         // If they are still empty after reading the theme config, then 
-        // the user hasn;t supplied their own values we'll use our actual 
-        // defaults
+        //  the user hasn't supplied their own values we'll use our actual 
+        //  defaults
         //
         ////////////////////////////////////////////////////////////////////////
 
@@ -67,6 +67,9 @@ module.exports = plugin.withOptions( function(options) {
         if( Object.keys( theme('utopia.spacingSizes') ).length == 0 ) {
             userTheme['spacingSizes'] = defaultSpacingSizes
         }
+
+
+        console.log(theme('utopia'));
 
         if( opts.generateSpacing || !opts.useClamp ) {
             const rootProperties = {
