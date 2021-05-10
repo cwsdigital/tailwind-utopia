@@ -128,7 +128,7 @@ Example default output:
 ```
 
 ## Customising your scales
-The plugin is a standard Tailwind plugin, with its defaults set using a theme object.  So all the defaults can be extended or overriden within the `theme` and `extend` entries within your Tailwind config file.
+The plugin is a standard Tailwind plugin, with its defaults set using a theme object.  So all the defaults can be extended within the `extend` entries within your Tailwind config file.
 
 Below is the default theme used by the plugin:
 ```
@@ -139,27 +139,8 @@ utopia: {
     maxScreen: '1140px',
     maxSize: 24,
     maxScale: 1.25,
-    textSizes: [
-        'step--2',
-        'step--1',
-        'step-0',
-        'step-1',
-        'step-2',
-        'step-3',
-        'step-4',
-        'step-5',
-    ],
-    spacingSizes: {
-        '3xs': 0.25,
-        '2xs': 0.5,
-        'xs': 0.75,
-        's': 1,
-        'm': 1.5,
-        'l': 2,
-        'xl': 3,
-        '2xl': 4,
-        '3xl': 6,
-    },
+    textSizes: [],
+    spacingSizes: {},
     spacingPairs: {},
     spacingCustomPairs: [],
 }
@@ -203,7 +184,7 @@ customPairs: [
 You can reference other parts of your theme config if deisred (e.g. for using entries from your screens config).  An example customisation could look as follows:
 ```
 {
-  theme: {
+  extend: {
     utopia: theme => ({
         minScreen: theme('screens.sm'),
         maxScreen: theme('screens.xl'),
@@ -220,17 +201,13 @@ You can reference other parts of your theme config if deisred (e.g. for using en
 
     }),
   },
-  extend: {
-    utopia: {
-      spacingSizes: {
-        '4xl': 8
-      },
-    }
-  }
 }
 ```
-**NB:** Due to the way extend works and the way the classes are calculated (order matters!), if you wish to add a negative step to your typographic scale you'll need to add the whole textSizes array into the theme, rather than use extend.
-
+**NB:** Due to the way Tailwind's theme and extend works this plugin provides
+blank entries as it's default theme file - this means all customisation shoudl
+happen within the `extend:` key of the Tailwind config, and you will need to
+provide the whole array of text and spacing sizes you require. If you leave the
+sizes keys blank, only then will the plugin use it's defaults.
 
 ## Configuration Options
 The plugin has the following options to configure the style of classes generated and how they are generated. 
@@ -323,7 +300,7 @@ Using the following config it is possible to replace Tailwind's default typograp
 ```
 const fluidTypography = require('tailwind-fluid-typography')
 module.exports = {
-  theme: {
+  extend: {
     utopia: theme => ({
         minScreen: theme('screens.sm'),
         minSize: 16,
