@@ -98,6 +98,7 @@ module.exports = plugin.withOptions( function(options) {
             theme: theme,
             e: e,
             addUtilities: addUtilities,
+            addBase: addBase,
             options: opts,
         })
 
