@@ -68,9 +68,6 @@ module.exports = plugin.withOptions( function(options) {
             userTheme['spacingSizes'] = defaultSpacingSizes
         }
 
-
-        console.log(theme('utopia'));
-
         if( opts.generateSpacing || !opts.useClamp ) {
             const rootProperties = {
                     ':root': {
