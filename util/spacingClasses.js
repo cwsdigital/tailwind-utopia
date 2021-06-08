@@ -32,4 +32,13 @@ module.exports = {
     height: {
         'h': ['height'],
     },
+    position: {
+        'top': ['top'],
+        'bottom': ['bottom'],
+        'left': ['left'],
+        'right': ['right'],
+        'inset': ['top', 'bottom', 'right', 'left'],
+        'inset-x': ['left', 'right'],
+        'inset-y': ['top', 'bottom']
+    }
 }
