@@ -17,14 +17,12 @@ This plugin essentailly recreates the calculators from utopia.fyi within your ta
 ## Getting Started
 Require the plugin in your `tailwind.config.js` file and reference it in the plugins section.
 ```
-const utopia = require('tailwind-utopia')
-
 module.exports = {
   theme: {
   ...
   },
   plugins: [
-    utopia
+    require('tailwind-utopia')
   ]
 }
 ```
@@ -100,6 +98,15 @@ the scale for most all of the Tailwind entries that utilise the spacing scale.
     height: {
         'h': ['height'],
     },
+    position: {
+        'top': ['top'],
+        'bottom': ['bottom'],
+        'left': ['left'],
+        'right': ['right'],
+        'inset': ['top', 'bottom', 'right', 'left'],
+        'inset-x': ['left', 'right'],
+        'inset-y': ['top', 'bottom']
+    }
 }
 ``` 
 The plugin will also generate utilities for contiguous pais in the scale.  i.e.
@@ -165,7 +172,7 @@ generate classes for using the `spacingPairs:` theme entry.
 You can also generate wider spacings by providing custom pairings.  This is for
 genrating scaling between non-contiguous scale entries. e.g. 's-xl', 'lg-2xl'
 
-**NB**: The `spacingPairs:` entry is an object, so can only have one key for each size.
+**N.B.** The `spacingPairs:` entry is an object, so can only have one key for each size.
 The `spacingCustomPairs:` needs to be able to handle multiple pairs with the same
 starting key e.g. 's-lg' and 's-2xl', so should be provided as an array of
 objects.
@@ -203,8 +210,8 @@ You can reference other parts of your theme config if deisred (e.g. for using en
   },
 }
 ```
-**NB:** Due to the way Tailwind's theme and extend works this plugin provides
-blank entries as it's default theme file - this means all customisation shoudl
+**N.B.** Due to the way Tailwind's theme and extend works this plugin provides
+blank entries as it's default theme file - this means all customisation should
 happen within the `extend:` key of the Tailwind config, and you will need to
 provide the whole array of text and spacing sizes you require. If you leave the
 sizes keys blank, only then will the plugin use it's defaults.
@@ -231,6 +238,9 @@ The plugin has the following options to configure the style of classes generated
   <tr>
     <td>generateAllSpacingPairs</td><td>true</td>
   <tr>
+  <tr>
+    <td>generateFallbacks</td><td>true</td>
+  <tr>
 </table>
 
 To call the plugin with options you simply change how you call the plugin in the tailwind config file.
@@ -255,7 +265,7 @@ By default (and by design) utopia generates its scale using CSS custom propertie
 ```
 Setting this option to true will generate the clamp style of declarations. For more details on clamp, [Read this blog post from utopia.fyi](https://utopia.fyi/blog/clamp).
 
-**NB:** there are drawbacks to using clamp() - most notably for accessibility, as it can limit the users ability to zoom the text.  This can result in not meeting WCAG criteria.  For more details [see this post from Adrian Roselli](https://adrianroselli.com/2019/12/responsive-type-and-zoom.html).
+**N.B.** there are drawbacks to using clamp() - most notably for accessibility, as it can limit the users ability to zoom the text.  This can result in not meeting WCAG criteria.  For more details [see this post from Adrian Roselli](https://adrianroselli.com/2019/12/responsive-type-and-zoom.html).
 
 #### prefix
 By default, this plugin will prefix all of the utility selectors with a prrefix of `fl:`.  You can customise this to whatever you choose with this config option. This is the default as it avoids collision with Tailwind's base (static) text sizes.
@@ -294,6 +304,14 @@ be utilising purgeCSS or similar to clean up unused classes from your production
 output anyway.  However if you wish to limit the pairs that are generated, you
 can disable this setting and provide a custom set of pairs in your theme config
 (see above)
+
+#### generateFalbacks
+On by default, each utility will also have a static fallback size generated to
+accommodate browsers that do not support CSS custom properties (IE11).  
+
+**N.B.** Tailwind itself no longer officially supports IE11 and internally uses custom
+properties for various effects.  As such, even with fallbacks on, the `space-x`
+and `space-y` utiltities will not work.
 
 ## Usage Example: Fully replace Tailwind text classes with fluid versions
 Using the following config it is possible to replace Tailwind's default typographic scale with a fluid scale, keeping the class names the same, enabling it to be retrofitted into an existing tailwind site.
