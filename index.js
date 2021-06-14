@@ -12,6 +12,7 @@ module.exports = plugin.withOptions( function(options) {
             baseTextSize: 'step-0',
             generateSpacing: true,
             generateAllSpacingPairs: true,
+            generateFallbacks: true,
             classes: classes,
         } 
         
