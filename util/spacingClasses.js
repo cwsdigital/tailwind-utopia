@@ -7,6 +7,13 @@ module.exports = {
         'ml': ['margin-left'],
         'mx': ['margin-left', 'margin-right'],
         'my': ['margin-top', 'margin-bottom'],
+        '-m': ['margin'],
+        '-mt': ['margin-top'],
+        '-mr': ['margin-right'],
+        '-mb': ['margin-bottom'],
+        '-ml': ['margin-left'],
+        '-mx': ['margin-left', 'margin-right'],
+        '-my': ['margin-top', 'margin-bottom'],
     },
     padding: {
         'p': ['padding'],
