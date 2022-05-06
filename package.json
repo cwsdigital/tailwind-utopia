@@ -12,9 +12,9 @@
   "author": "Chris Pymm",
   "license": "MIT",
   "peerDependencies": {
-    "tailwindcss": "^2"
+    "tailwindcss": ">2"
   },
   "devDependencies": {
-    "lodash.merge": "^4.6.2"
+    "lodash": "^4.17"
   }
 }

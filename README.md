@@ -35,14 +35,14 @@ Out of the box this will generate both a fluid type scale and a fluid space scal
 ### Typographic Scale
 the default utility classes genearted are as follows.
 ```
-.fl:text-step--2 
-.fl:text-step--1 
-.fl:text-step-0 
-.fl:text-step-1
-.fl:text-step-2
-.fl:text-step-3
-.fl:text-step-4
-.fl:text-step-5
+.fl-text-step--2 
+.fl-text-step--1 
+.fl-text-step-0 
+.fl-text-step-1
+.fl-text-step-2
+.fl-text-step-3
+.fl-text-step-4
+.fl-text-step-5
 ```
 
 ### Spacing Scale
@@ -125,12 +125,12 @@ Example default output:
     ...
 }
 
-.fl\:ml-xs {
+.fl-ml-xs {
     margin-left: var(--fs-xs);
 }
-.fl\mr-xs { ... }
+.fl-mr-xs { ... }
 ...
-.fl\my-xs-s { ... }
+.fl-my-xs-s { ... }
 ...etc
 ```
 
@@ -227,7 +227,7 @@ The plugin has the following options to configure the style of classes generated
     <td>useClamp</td><td>false</td>
   <tr>
   <tr>
-    <td>prefix</td><td>'fl:'</td>
+    <td>prefix</td><td>'fl-'</td>
   <tr>
   <tr>
     <td>baseTextSize</td><td>'step-0'</td>
