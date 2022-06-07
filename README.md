@@ -33,7 +33,7 @@ Out of the box this will generate both a fluid type scale and a fluid space scal
   for each space-value pair in the scale 
 
 ### Typographic Scale
-the default utility classes genearted are as follows.
+the default utility classes generated are as follows.
 ```
 .fl:text-step--2 
 .fl:text-step--1 
