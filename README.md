@@ -243,7 +243,7 @@ The plugin has the following options to configure the style of classes generated
   <tr>
 </table>
 
-To call the plugin with options you simply change how you call the plugin in the tailwind config file.
+To call the plugin with options you simply change how you call the plugin in the Tailwind config file.
 ```
 module.exports = {
   ...
@@ -314,7 +314,7 @@ properties for various effects.  As such, even with fallbacks on, the `space-x`
 and `space-y` utiltities will not work.
 
 ## Usage Example: Fully replace Tailwind text classes with fluid versions
-Using the following config it is possible to replace Tailwind's default typographic scale with a fluid scale, keeping the class names the same, enabling it to be retrofitted into an existing tailwind site.
+Using the following config it is possible to replace Tailwind's default typographic scale with a fluid scale, keeping the class names the same, enabling it to be retrofitted into an existing Tailwind site.
 ```
 const fluidTypography = require('tailwind-fluid-typography')
 module.exports = {
