@@ -305,7 +305,7 @@ output anyway.  However if you wish to limit the pairs that are generated, you
 can disable this setting and provide a custom set of pairs in your theme config
 (see above)
 
-#### generateFalbacks
+#### generateFallbacks
 On by default, each utility will also have a static fallback size generated to
 accommodate browsers that do not support CSS custom properties (IE11).  
 
@@ -399,7 +399,7 @@ Much as it would be nice, it is not possible (as far as I can work out) to
 modify the default `spacing` entry and have it picked up by the core Plugins. 
 
 The core plugins all run (and have consumed the theme) before any custom plugins
-have run, so the genrated scale is not present in the theme at the time the
+have run, so the generated scale is not present in the theme at the time the
 corePlugins generate their utilities.
 
 
