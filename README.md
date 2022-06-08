@@ -27,22 +27,22 @@ module.exports = {
 }
 ```
 
-Out of the box this will generate both a fluid type scale and a fluid space scale with the same defaults as the Utopia calculators: 
+Out of the box this will generate both a fluid type scale and a fluid space scale with the same defaults as the Utopia calculators:
 * A type scale with 2 negative steps and 5 positive steps from a 20px base size at the minumum screen size of 320px up to a 24px base size at the maximum screen size of 1140px, with the modular scale being 1.2 (minor third) at the minimum screen size and 1.25 (major third) at the maximum screen size.
 * A fluid spacing scale with t-shirt sizes from 3xs up to 3xl, and utilities
-  for each space-value pair in the scale 
+  for each space-value pair in the scale
 
 ### Typographic Scale
 the default utility classes genearted are as follows.
 ```
-.fl:text-step--2 
-.fl:text-step--1 
-.fl:text-step-0 
-.fl:text-step-1
-.fl:text-step-2
-.fl:text-step-3
-.fl:text-step-4
-.fl:text-step-5
+.fl-text-step--2
+.fl-text-step--1
+.fl-text-step-0
+.fl-text-step-1
+.fl-text-step-2
+.fl-text-step-3
+.fl-text-step-4
+.fl-text-step-5
 ```
 
 ### Spacing Scale
@@ -227,7 +227,7 @@ The plugin has the following options to configure the style of classes generated
     <td>useClamp</td><td>false</td>
   <tr>
   <tr>
-    <td>prefix</td><td>'fl:'</td>
+    <td>prefix</td><td>'fl-'</td>
   <tr>
   <tr>
     <td>baseTextSize</td><td>'step-0'</td>
@@ -268,7 +268,7 @@ Setting this option to true will generate the clamp style of declarations. For m
 **N.B.** there are drawbacks to using clamp() - most notably for accessibility, as it can limit the users ability to zoom the text.  This can result in not meeting WCAG criteria.  For more details [see this post from Adrian Roselli](https://adrianroselli.com/2019/12/responsive-type-and-zoom.html).
 
 #### prefix
-By default, this plugin will prefix all of the utility selectors with a prrefix of `fl:`.  You can customise this to whatever you choose with this config option. This is the default as it avoids collision with Tailwind's base (static) text sizes.
+By default, this plugin will prefix all of the utility selectors with a prefix of `fl-`.  You can customise this to whatever you choose with this config option. This is the default as it avoids collision with Tailwind's base (static) text sizes.
 
 **Using an Empty Prefix** <br />
 It is possible (preferable?) to have no prefix.

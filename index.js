@@ -7,7 +7,7 @@ module.exports = plugin.withOptions( function(options) {
     return function( { addBase, addUtilities, e, theme } ) {
         defaultOptions = {
             useClamp: false,
-            prefix: 'fl:',
+            prefix: 'fl-',
             baseTextSize: 'step-0',
             generateSpacing: true,
             generateAllSpacingPairs: true,
