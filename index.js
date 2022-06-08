@@ -4,7 +4,7 @@ const fluidSpacing = require('./lib/fluidSpacing')
 const classes = require('./util/spacingClasses')
 
 module.exports = plugin.withOptions( function(options) {
-    return function( { addBase, addUtilities, e, theme } ) {
+    return function( { addBase, addUtilities, matchUtilities, e, theme } ) {
         defaultOptions = {
             useClamp: false,
             prefix: 'fl-',
@@ -97,7 +97,7 @@ module.exports = plugin.withOptions( function(options) {
         textSizes({
             theme: theme,
             e: e,
-            addUtilities: addUtilities,
+            matchUtilities: matchUtilities,
             addBase: addBase,
             options: opts,
         })
