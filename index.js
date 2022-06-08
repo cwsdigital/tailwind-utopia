@@ -2,7 +2,6 @@ const plugin = require('tailwindcss/plugin')
 const textSizes = require('./lib/textSizes')
 const fluidSpacing = require('./lib/fluidSpacing')
 const classes = require('./util/spacingClasses')
-const merge = require('lodash/merge');
 
 module.exports = plugin.withOptions( function(options) {
     return function( { addBase, addUtilities, e, theme } ) {
@@ -40,7 +39,7 @@ module.exports = plugin.withOptions( function(options) {
         }
 
 
-        const opts = merge({}, defaultOptions, options);
+        const opts = Object.assign({}, defaultOptions, options);
 
 
         let minWidth = theme('utopia.minScreen', '').replace('px', '')

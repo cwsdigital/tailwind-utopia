@@ -13,8 +13,5 @@
   "license": "MIT",
   "peerDependencies": {
     "tailwindcss": "^2"
-  },
-  "devDependencies": {
-    "lodash.merge": "^4.6.2"
   }
 }
