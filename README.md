@@ -148,8 +148,7 @@ utopia: {
     maxScale: 1.25,
     textSizes: [],
     spacingSizes: {},
-    spacingPairs: {},
-    spacingCustomPairs: [],
+    spacingPairs: []
 }
 
 ```
@@ -160,33 +159,16 @@ utopia: {
 * **maxScreen**: the screen size at which the scale stops increasing (unitless integer or px)
 * **maxSize**: the base font size a the maxScreen size (unitless integer)
 * **maxScale**: the modular scale to use at the maxScreen size (decimal)
-* **textSizes**: your text size class names 
-* **spacingsizes**: spacing scale class names and associated multiplier
-* **spacingPairs**: only generate specified pairs
-* **spacingCustomPairs**: non-contiguous spacing pairs to generate utilities for
+* **textSizes**: your text size class names
+* **spacingSizes**: spacing scale class names and associated multiplier
+* **spacingPairs**: only generate specified pairs, e.g. `[['s', 'm'], ['s', 'xl']]`
 
 It is possible to disable the generation of all spacing scale pairs (see configuration
 below).  If you do this you can provide only the pairs you would like to
 generate classes for using the `spacingPairs:` theme entry.
 
 You can also generate wider spacings by providing custom pairings.  This is for
-genrating scaling between non-contiguous scale entries. e.g. 's-xl', 'lg-2xl'
-
-**N.B.** The `spacingPairs:` entry is an object, so can only have one key for each size.
-The `spacingCustomPairs:` needs to be able to handle multiple pairs with the same
-starting key e.g. 's-lg' and 's-2xl', so should be provided as an array of
-objects.
-```
-pairs: {
-    s: 'md',
-    lg: 'xl'
-},
-customPairs: [
-    { s: 'md' },
-    { s: 'lg' },
-    { lg: '2xl' }
-]
-```
+generating scaling between non-contiguous scale entries. e.g. 's-xl', 'lg-2xl'
 
 You can reference other parts of your theme config if deisred (e.g. for using entries from your screens config).  An example customisation could look as follows:
 ```

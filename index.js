@@ -126,8 +126,7 @@ module.exports = plugin.withOptions( function(options) {
                 maxScale: 1.25,
                 textSizes: [],
                 spacingSizes: {},
-                spacingPairs: {},
-                spacingCustomPairs: [],
+                spacingPairs: [],
                 spacingScale: {},
             }
         }
