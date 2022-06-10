@@ -12,6 +12,6 @@
   "author": "Chris Pymm",
   "license": "MIT",
   "peerDependencies": {
-    "tailwindcss": "^2"
+    "tailwindcss": "^3"
   }
 }
