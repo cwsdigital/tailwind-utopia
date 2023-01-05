@@ -188,7 +188,7 @@ customPairs: [
 ]
 ```
 
-You can reference other parts of your theme config if deisred (e.g. for using entries from your screens config).  An example customisation could look as follows:
+You can reference other parts of your theme config if desired (e.g. for using entries from your screens config).  An example customisation could look as follows:
 ```
 {
   extend: {
