@@ -109,7 +109,7 @@ the scale for most all of the Tailwind entries that utilise the spacing scale.
     }
 }
 ``` 
-The plugin will also generate utilities for contiguous pais in the scale.  i.e.
+The plugin will also generate utilities for contiguous pairs in the scale.  i.e.
 '2xs-xs', 'xs-s', 's-m' and so on for the whole scale.  
 
 Each size on the scale is also added as a CSS custom property onto the `:root`
