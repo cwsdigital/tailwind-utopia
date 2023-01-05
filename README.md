@@ -268,7 +268,7 @@ Setting this option to true will generate the clamp style of declarations. For m
 **N.B.** there are drawbacks to using clamp() - most notably for accessibility, as it can limit the users ability to zoom the text.  This can result in not meeting WCAG criteria.  For more details [see this post from Adrian Roselli](https://adrianroselli.com/2019/12/responsive-type-and-zoom.html).
 
 #### prefix
-By default, this plugin will prefix all of the utility selectors with a prrefix of `fl:`.  You can customise this to whatever you choose with this config option. This is the default as it avoids collision with Tailwind's base (static) text sizes.
+By default, this plugin will prefix all of the utility selectors with a prefix of `fl:`.  You can customise this to whatever you choose with this config option. This is the default as it avoids collision with Tailwind's base (static) text sizes.
 
 **Using an Empty Prefix** <br />
 It is possible (preferable?) to have no prefix.
