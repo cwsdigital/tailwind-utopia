@@ -109,7 +109,7 @@ the scale for most all of the Tailwind entries that utilise the spacing scale.
     }
 }
 ``` 
-The plugin will also generate utilities for contiguous pais in the scale.  i.e.
+The plugin will also generate utilities for contiguous pairs in the scale.  i.e.
 '2xs-xs', 'xs-s', 's-m' and so on for the whole scale.  
 
 Each size on the scale is also added as a CSS custom property onto the `:root`
@@ -188,7 +188,7 @@ customPairs: [
 ]
 ```
 
-You can reference other parts of your theme config if deisred (e.g. for using entries from your screens config).  An example customisation could look as follows:
+You can reference other parts of your theme config if desired (e.g. for using entries from your screens config).  An example customisation could look as follows:
 ```
 {
   extend: {
@@ -268,7 +268,7 @@ Setting this option to true will generate the clamp style of declarations. For m
 **N.B.** there are drawbacks to using clamp() - most notably for accessibility, as it can limit the users ability to zoom the text.  This can result in not meeting WCAG criteria.  For more details [see this post from Adrian Roselli](https://adrianroselli.com/2019/12/responsive-type-and-zoom.html).
 
 #### prefix
-By default, this plugin will prefix all of the utility selectors with a prrefix of `fl:`.  You can customise this to whatever you choose with this config option. This is the default as it avoids collision with Tailwind's base (static) text sizes.
+By default, this plugin will prefix all of the utility selectors with a prefix of `fl:`.  You can customise this to whatever you choose with this config option. This is the default as it avoids collision with Tailwind's base (static) text sizes.
 
 **Using an Empty Prefix** <br />
 It is possible (preferable?) to have no prefix.
