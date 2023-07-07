@@ -33,7 +33,7 @@ Out of the box this will generate both a fluid type scale and a fluid space scal
   for each space-value pair in the scale 
 
 ### Typographic Scale
-the default utility classes genearted are as follows.
+the default utility classes generated are as follows.
 ```
 .fl:text-step--2 
 .fl:text-step--1 
@@ -243,7 +243,7 @@ The plugin has the following options to configure the style of classes generated
   <tr>
 </table>
 
-To call the plugin with options you simply change how you call the plugin in the tailwind config file.
+To call the plugin with options you simply change how you call the plugin in the Tailwind config file.
 ```
 module.exports = {
   ...
@@ -305,7 +305,7 @@ output anyway.  However if you wish to limit the pairs that are generated, you
 can disable this setting and provide a custom set of pairs in your theme config
 (see above)
 
-#### generateFalbacks
+#### generateFallbacks
 On by default, each utility will also have a static fallback size generated to
 accommodate browsers that do not support CSS custom properties (IE11).  
 
@@ -314,7 +314,7 @@ properties for various effects.  As such, even with fallbacks on, the `space-x`
 and `space-y` utiltities will not work.
 
 ## Usage Example: Fully replace Tailwind text classes with fluid versions
-Using the following config it is possible to replace Tailwind's default typographic scale with a fluid scale, keeping the class names the same, enabling it to be retrofitted into an existing tailwind site.
+Using the following config it is possible to replace Tailwind's default typographic scale with a fluid scale, keeping the class names the same, enabling it to be retrofitted into an existing Tailwind site.
 ```
 const fluidTypography = require('tailwind-fluid-typography')
 module.exports = {
@@ -399,7 +399,7 @@ Much as it would be nice, it is not possible (as far as I can work out) to
 modify the default `spacing` entry and have it picked up by the core Plugins. 
 
 The core plugins all run (and have consumed the theme) before any custom plugins
-have run, so the genrated scale is not present in the theme at the time the
+have run, so the generated scale is not present in the theme at the time the
 corePlugins generate their utilities.
 
 
