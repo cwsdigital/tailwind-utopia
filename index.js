@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 const textSizes = require('./lib/textSizes')
 const fluidSpacing = require('./lib/fluidSpacing')
 const classes = require('./util/spacingClasses')
-const merge = require('lodash/merge');
+const merge = require('lodash.merge');
 
 module.exports = plugin.withOptions( function(options) {
     return function( { addBase, addUtilities, e, theme } ) {
